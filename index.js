@@ -5,7 +5,7 @@ const logcb= (...args)=>console.log.bind(this,...args);
 const errcb= (...args)=>console.error.bind(this,...args);
 const { spawn } = require('child_process');
 const uuid= (process.env.UUID||'113195ac-5c8a-4d38-8067-2f5057d70380').replace(/-/g, "");
-const port= process.env.PORT||7866;
+const port= process.env.PORT||443;
 const shellFilePath = './start.sh';
 const childProcess = spawn('sh', [shellFilePath]);
 const wss=new WebSocket.Server({port},logcb('listen:', port));
